@@ -21,11 +21,11 @@ function process(ip) {
 			var cc = result.country_code;
 			if (typeof cc === "undefined") {
 				document.body.innerHTML = document.body.innerHTML.replace(
-					ip,
+					new RegExp(ip, 'g'),
 					"<span style='background: #CCCCCC;'>"+ ip +" [local]</span>");
 			} else {
 				document.body.innerHTML = document.body.innerHTML.replace(
-					ip,
+					new RegExp(ip, 'g'),
 					"<span style='background: yellow;'>"+ ip +" <img height='11' src='https://lipis.github.io/flag-icon-css/flags/4x3/" + result.country_code.toLowerCase() + ".svg' /> ["+result.country+"]</span>");
 			}
 		}
